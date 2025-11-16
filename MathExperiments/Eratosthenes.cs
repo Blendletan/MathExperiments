@@ -4,6 +4,11 @@
     {
         public static Primes GetPrimes(int max)
         {
+            var isPrime = GetPrimesAsBoolArray(max);
+            return new Primes(isPrime);
+        }
+        public static bool[] GetPrimesAsBoolArray(int max)
+        {
             var isPrime = new bool[max + 1];
             int maxHeight = (int)Math.Sqrt(max);
             for (int i = 2; i <= max; i++)
@@ -21,7 +26,7 @@
                     isPrime[composite] = false;
                 }
             }
-            return new Primes(isPrime);
+            return isPrime;
         }
     }
     public class Primes

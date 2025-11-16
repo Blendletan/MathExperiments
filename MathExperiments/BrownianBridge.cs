@@ -21,6 +21,35 @@ namespace MathExperiments
             FourierCoeffecients = iid.ToList();
 
         }
+        public BrownianBridge(int numberOfFourierTerms, List<int> admissibleTerms,bool deterministic)
+        {
+            double[] coeff = new double[numberOfFourierTerms];
+            if (deterministic == false)
+            {
+                coeff = MathNet.Numerics.Generate.Normal(numberOfFourierTerms, 0, 1);
+            }
+            for (int i = 0; i < numberOfFourierTerms; i++)
+            {
+                int index = i + 1;
+                if (admissibleTerms.Contains(index) == false)
+                {
+                    coeff[i] = 0;
+                    continue;
+                }
+                if (deterministic)
+                {
+                    coeff[i] = 1;
+                }
+                coeff[i] *= Math.Sqrt(2);
+                coeff[i] /= Math.PI;
+                coeff[i] /= (double)(index);
+                if (deterministic)
+                {
+                    coeff[i] /= (double)(index);
+                }
+            }
+            FourierCoeffecients = coeff.ToList();
+        }
         public double Evaluate(double x)
         {
             double output = 0;

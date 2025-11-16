@@ -5,10 +5,11 @@
     {
         static void Main(string[] args)
         {
-            int numberOfPoints = 1000;
+            int numberOfPoints = 100000;
             int numberOfSteps = 10000000;
-            int numberOfFourierTerms = 400;
-            var bridge = new BrownianBridge(numberOfFourierTerms);
+            int numberOfFourierTerms = 5000;
+            var p = Eratosthenes.GetPrimes(numberOfFourierTerms);
+            var bridge = new BrownianBridge(numberOfFourierTerms,p.PrimeList,false);
             double incrementSize = 1d / (double)numberOfPoints;
             var values = new double[numberOfPoints];
             int midpoint = numberOfPoints / 2;

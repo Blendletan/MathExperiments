@@ -7,6 +7,15 @@ namespace MathExperiments
 {
     public class PlotHelper
     {
+        public static void DrawBar(string filePath, double[] values)
+        {
+            var plot = new ScottPlot.Plot();
+            plot.Add.Bars(values);
+            plot.Axes.Margins(bottom: 0.1);
+            plot.Axes.Margins(left: 0.1);
+            plot.Axes.AutoScale();
+            plot.SaveBmp(filePath, 1000, 1000);
+        }
         public static void DrawHistogram(string filePath, double[] values)
         {
             int numberOfBins = (int)Math.Round(values.Max(), MidpointRounding.ToPositiveInfinity);
