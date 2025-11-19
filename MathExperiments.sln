@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeatEquation", "HeatEquatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalBrownianMotion", "FractalBrownianMotion\FractalBrownianMotion.csproj", "{04239547-79AA-4979-B502-C2AA8121C4E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioExperiments", "AudioExperiments\AudioExperiments.csproj", "{60BE9A68-1C51-40DC-B43F-EE36044B9A41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{04239547-79AA-4979-B502-C2AA8121C4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04239547-79AA-4979-B502-C2AA8121C4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04239547-79AA-4979-B502-C2AA8121C4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BE9A68-1C51-40DC-B43F-EE36044B9A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BE9A68-1C51-40DC-B43F-EE36044B9A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BE9A68-1C51-40DC-B43F-EE36044B9A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BE9A68-1C51-40DC-B43F-EE36044B9A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

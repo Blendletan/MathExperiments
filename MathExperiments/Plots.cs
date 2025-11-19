@@ -36,5 +36,14 @@ namespace MathExperiments
             //plot.Axes.AutoScale();
             plot.SaveBmp(filePath, 1000, 1000);
         }
+        public static void DrawSignal(string filePath, double[] xValues, double[] yValues)
+        {
+            var plot = new ScottPlot.Plot();
+            plot.Add.SignalXY(xValues, yValues);
+            plot.Axes.Margins(bottom: 0.1);
+            plot.Axes.Margins(left: 0.1);
+            //plot.Axes.AutoScale();
+            plot.SaveBmp(filePath, 1000, 1000);
+        }
     }
 }

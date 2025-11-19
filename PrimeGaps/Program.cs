@@ -7,8 +7,15 @@
         {
             
             string filePath = @"Poisson\test";
-            int max = 1500000000;
+            int max = 1800000000;
             var p = PrimeGaps.GetPrimeGaps(max);
+            int h = 100*(int)Math.Log(max);
+            var newP = new double[h];
+            for (int i = 0; i < h; i++)
+            {
+                newP[i] = p[p.Length - h + i];
+            }
+            p = newP;
             double total = (double)p.Length;
             int distinctGaps = (int)p.Max();
             double[] probabilities = new double[distinctGaps + 1];
