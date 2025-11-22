@@ -2,22 +2,22 @@
 {
     public static class Eratosthenes
     {
-        public static int[] MoebiusMu(int max)
+        public static long[] MoebiusMu(int max)
         {
             var isPrime = new bool[max + 1];
-            var output = new int[max + 1];
+            var output = new long[max + 1];
             for (int i = 2; i <= max; i++)
             {
                 isPrime[i] = true;
                 output[i] = 1;
             }
-            for (int prime = 2; prime <= max; prime++)
+            for (long prime = 2; prime <= max; prime++)
             {
                 if (isPrime[prime] == false)
                 {
                     continue;
                 }
-                for (int composite = prime; composite <= max; composite += prime)
+                for (long composite = prime; composite <= max; composite += prime)
                 {
                     if (composite != prime)
                     {

@@ -15,5 +15,9 @@ namespace MathExperiments
             distribution.Samples(output);
             return output;
         }
+        public static double StandardDeviation(List<int> input)
+        {
+            return MathNet.Numerics.Statistics.ArrayStatistics.StandardDeviation(input.ToArray());
+        }
     }
 }
