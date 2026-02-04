@@ -6,13 +6,13 @@
         static void Main(string[] args)
         {
             GenerateMuHistogram();
-            //var result = Statistics.GenerateChiSquareSamples(2, 25000);
-            //PlotHelper.DrawHistogram("testChiSquareManySamples.bmp", result);
+            var result = Statistics.GenerateChiSquareSamples(2, 1000000);
+            PlotHelper.DrawHistogram("testChiSquareManySamples2.bmp", result);
         }
         static void GenerateMuHistogram()
         {
-            int max = 1500000000;
-            int sampleSize = 16;
+            int max = 1600000000;
+            int sampleSize = 50;
             int numberOfTrials = 1000000;
             int maxStartingPoint = max - 2 * sampleSize;
             var moebius = Eratosthenes.MoebiusMu(max);
@@ -29,7 +29,7 @@
                 double chi = ComputeChiSquare(muOutcomes);
                 chiSquareHistogram[i] = chi;
             }
-            PlotHelper.DrawHistogram("testSmallK2.bmp", chiSquareHistogram);
+            PlotHelper.DrawHistogram("testSmallK4.bmp", chiSquareHistogram);
             /*
             for (int i = 1; i <= max; i++)
             {

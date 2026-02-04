@@ -18,13 +18,15 @@ namespace MathExperiments
         }
         public static void DrawHistogram(string filePath, double[] values)
         {
-            int numberOfBins = (int)Math.Round(values.Max(), MidpointRounding.ToPositiveInfinity);
+            //int numberOfBins = (int)Math.Round(values.Max(), MidpointRounding.ToPositiveInfinity);
+            int numberOfBins = 10;
             var hist = ScottPlot.Statistics.Histogram.WithBinCount(numberOfBins, values);
-            var plot = new ScottPlot.Plot();
-            plot.Add.Bars(hist.Bins, hist.Counts);
-            plot.Axes.Margins(bottom: 0.1);
-            plot.Axes.Margins(left: 0.1);
-            plot.Axes.AutoScale();
+            ScottPlot.Plot plot = new ();
+            var histPlot = plot.Add.Histogram(hist);
+            histPlot.BarWidthFraction = 0.5;
+            plot.Axes.MarginsX(0);
+            plot.Axes.MarginsY(0);
+            plot.Axes.AutoScaleExpandX();
             plot.SaveBmp(filePath, 1000, 1000);
         }
         public static void DrawSignal(string filePath, double[] values)
